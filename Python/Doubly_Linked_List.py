@@ -111,6 +111,24 @@ class Doubly_Linked_List:
                     current = current.next
                 if current == None:
                     print("The given data not in the list")
+                    
+    def is_balanced(self,value):
+        total_1 = 0
+        total_2 = 0
+        found = False
+        current = self.head
+        while current != None:
+            if current.data != value and found == False:
+                total_1 += current.data
+            elif current.data == value:
+                found = True
+            elif found:
+                total_2 += current.data
+            current = current.next
+        if total_1 == total_2:
+            return True
+        else:
+            return False
                 
     def print_node(self):
         current = self.head
