@@ -211,7 +211,43 @@ def print_ancestors(root, data):
 # node is not present in the tree, print “Node not found!”
 
 def print_successors(root,data):
-    pass
+    if root == None:
+        return False
+    curr = root
+    while curr != None:
+        if curr.data == data:
+            break
+        elif curr.data > data:
+            curr = curr.left
+        else:
+            curr = curr.right
+    if curr == None:
+        print("Node not found!")
+    else:
+        successors = []
+        curr = curr.right
+        while curr != None:
+            successors.append(curr.data)
+            curr = curr.left
+        if not successors:
+            print("No successors found")
+        else:
+            print(successors)
+
+t = BST()
+t.add_data(25)
+t.add_data(10)
+t.add_data(35)
+t.add_data(5)
+t.add_data(20)
+t.add_data(3)
+t.add_data(6)
+t.add_data(15)
+t.add_data(21)
+t.add_data(13)
+t.add_data(37)
+t.add_data(40)
+t.add_data(41)
 
 
 
