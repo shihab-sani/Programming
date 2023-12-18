@@ -91,6 +91,9 @@ class Stack:
 class Queue:
     def __init__(self):
         self.queue = Singly_Linked_List()
+        
+    def size(self):
+        return self.queue.size
     
     def enqueue(self,data):
         self.queue.add_after(data)
@@ -251,13 +254,13 @@ def binary_decimal(value):
     queue.print_queue()
 
 
-s = Queue()
-s.enqueue(1)
-s.enqueue(2)
-s.enqueue(3)
-s.print_queue()
-s1 = My_Queue()
-s1.enqueue(1)
-s1.enqueue(2)
-s1.enqueue(3)
-s1.print_my_queue()
+# s = Queue()
+# s.enqueue(1)
+# s.enqueue(2)
+# s.enqueue(3)
+# s.print_queue()
+# s1 = My_Queue()
+# s1.enqueue(1)
+# s1.enqueue(2)
+# s1.enqueue(3)
+# s1.print_my_queue()
