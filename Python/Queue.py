@@ -60,12 +60,49 @@ class Queue:
     def print_queue(self):
         self.queue.print_linked_list()
         
+# count duplicates   
+def getCount(queue):
+    if queue.is_empty():
+        return queue
+    result = Queue()
+    count = 1
+    prev = queue.peek()
+    queue.dequeue()
+    while not queue.is_empty():
+        curr = queue.peek()
+        queue.dequeue()
+        if curr == prev:
+            count += 1
+        else:
+            result.enqueue(count)
+            count = 1
+        prev = curr
+    result.enqueue(count)
+    return result
+
 q = Queue()
 q.enqueue(1)
 q.enqueue(2)
-q.enqueue(3)
+q.enqueue(2)
+q.enqueue(2)
+q.enqueue(2)
+q.enqueue(2)
+q.enqueue(5)
+q.enqueue(5)
+q.enqueue(5)
+q.enqueue(6)
+q.enqueue(7)
+q.enqueue(7)
 q.print_queue()
-print(q.peek())
-q.dequeue()
-q.dequeue()
-q.print_queue()
+s = getCount(q)
+s.print_queue()
+        
+# q = Queue()
+# q.enqueue(1)
+# q.enqueue(2)
+# q.enqueue(3)
+# q.print_queue()
+# print(q.peek())
+# q.dequeue()
+# q.dequeue()
+# q.print_queue()
